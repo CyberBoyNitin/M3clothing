@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>M3 Clothing — build different</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--void:#050407;--oil:#0d0a12;--sheen:#2a1245;--bone:#ece6da;--mute:#a79fb4;--red:#d3122b;--line:#2a2234;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--void);color:var(--bone);font:400 16px/1.6 "Space Grotesk",system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}.gf{font-family:"UnifrakturCook","Old English Text MT",Georgia,serif;font-weight:700}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;position:relative}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(5,4,7,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+.logo{font-size:30px;text-decoration:none}
+nav .l{display:flex;gap:22px;align-items:center}
+nav .l a{font-size:14px;text-decoration:none;color:var(--mute)}nav .l a:hover{color:var(--bone)}
+.btn{display:inline-block;border:1px solid var(--bone);background:var(--bone);color:var(--void);padding:13px 24px;font:700 15px "Space Grotesk",sans-serif;text-decoration:none;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--red);border-color:var(--red);color:#fff}.btn.g{background:transparent;color:var(--bone)}.btn.g:hover{color:#fff}
+.hero{position:relative;min-height:calc(100svh - 58px);overflow:hidden;display:flex;align-items:center;background:radial-gradient(ellipse at 72% 20%,#4a1d78 0,var(--sheen) 28%,var(--oil) 70%)}
+#goo{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;filter:drop-shadow(0 14px 18px rgba(0,0,0,.7)) drop-shadow(0 0 30px rgba(110,70,255,.22))}
+@media(max-width:700px){#goo{filter:none}}
+.hero .wrap{z-index:2;pointer-events:none}.hero .wrap a{pointer-events:auto}
+h1{font-size:clamp(60px,15vw,190px);line-height:.88;margin:0 0 18px;position:relative;display:inline-block;animation:flick 7s infinite}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;top:0;opacity:0}
+h1::before{color:var(--red);animation:gl1 7s infinite}h1::after{color:#6f5bff;animation:gl2 7s infinite}
+@keyframes gl1{0%,90%,100%{opacity:0}92%{opacity:.8;transform:translate(-6px,2px)}94%{opacity:.8;transform:translate(5px,-2px)}96%{opacity:0}}
+@keyframes gl2{0%,91%,100%{opacity:0}93%{opacity:.7;transform:translate(6px,-2px)}95%{opacity:0}}
+@keyframes flick{0%,90%,100%{transform:none}93%{transform:skewX(-4deg)}}
+.hero p{max-width:44ch;color:#cfc7dd;font-size:18px;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.tape{background:var(--red);overflow:hidden;white-space:nowrap;transform:rotate(-1.4deg);margin:-26px -12px 0;position:relative;z-index:3}
+.tape div{display:inline-block;padding:11px 0;animation:roll 30s linear infinite}.tape span{margin:0 20px;font-weight:700}
+@keyframes roll{to{transform:translateX(-50%)}}
+.teeth{height:34px;margin-top:-4px}.teeth svg{display:block;width:100%;height:100%}.tongue{animation:wag 3s ease-in-out infinite;transform-origin:50% 0}
+@keyframes wag{50%{transform:scaleY(1.35)}}
+section{padding:90px 0}h2{font-size:clamp(40px,7vw,76px);line-height:1;margin:0 0 10px}.sub{color:var(--mute);max-width:52ch;margin:0 0 36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.card{background:var(--oil);border:1px solid var(--line);transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .15s,border-color .2s;clip-path:circle(0% at 50% 100%)}
+.card.in{clip-path:circle(160% at 50% 100%);transition:clip-path 1.1s cubic-bezier(.2,.7,.2,1),transform .15s,border-color .2s}
+.card:hover{border-color:var(--red)}
+.stage{aspect-ratio:1/1.1;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 38%,var(--c),var(--void) 78%)}
+.stage svg{width:78%;filter:drop-shadow(0 18px 24px #000);animation:fl 6s ease-in-out infinite}.card:nth-child(2n) .stage svg{animation-delay:-2s}.card:nth-child(3n) .stage svg{animation-delay:-4s}
+@keyframes fl{50%{transform:translateY(-10px) rotate(1.2deg)}}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:12px;left:12px;background:var(--void);border:1px solid var(--bone);font-size:12px;padding:2px 10px;font-weight:700;z-index:1}
+.info{padding:16px 18px 20px}.info h3{margin:0 0 12px;font-size:18px}
+.sz{display:flex;gap:8px;margin-bottom:14px}.sz button{width:44px;height:38px;background:none;border:1px solid var(--line);color:var(--mute);font:700 14px "Space Grotesk",sans-serif;cursor:pointer}
+.sz button[aria-pressed=true]{background:var(--bone);color:var(--void);border-color:var(--bone)}
+.info .btn{width:100%;text-align:center}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border:1px solid var(--line)}
+.steps div{padding:30px;border-right:1px solid var(--line)}.steps div:last-child{border:0}
+.steps b{font-size:34px;display:block;line-height:1;margin-bottom:8px}.steps p{margin:0;color:var(--mute)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.panel{border:1px solid var(--line);background:var(--oil);padding:36px;position:relative;overflow:hidden}
+.panel::after{content:"";position:absolute;right:-60px;bottom:-60px;width:180px;height:180px;border-radius:50%;background:var(--sheen);filter:blur(30px);transition:transform .6s}
+.panel:hover::after{transform:scale(2.2)}.panel>*{position:relative;z-index:1}.panel p{color:var(--mute);margin:0 0 22px}
+footer{padding:50px 0 70px;color:var(--mute);font-size:14px}footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+@media(max-width:640px){nav .l a.h{display:none}.steps div{border-right:0;border-bottom:1px solid var(--line)}}
+body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.08;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");animation:gr .6s steps(3) infinite}
+@keyframes gr{33%{background-position:40px -30px}66%{background-position:-50px 20px}}
+#intro{position:fixed;inset:0;z-index:100;background:var(--void);display:grid;place-items:center;pointer-events:none;animation:curtain 1.5s cubic-bezier(.7,0,.2,1) 1.1s forwards}
+#intro b{font-size:clamp(100px,28vw,260px);line-height:1;animation:pulse 1.1s ease-out both}
+#intro svg{position:absolute;left:0;bottom:-79px;width:100%;height:80px}
+@keyframes pulse{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:none}}
+@keyframes curtain{to{transform:translateY(calc(-100% - 80px));visibility:hidden}}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--red);z-index:99}
+h1{background:linear-gradient(100deg,var(--bone) 30%,#b79bff 45%,var(--red) 50%,#b79bff 55%,var(--bone) 70%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:flick 7s infinite,sheen 6s linear infinite}
+h1::before,h1::after{-webkit-text-fill-color:currentColor;background:none}
+@keyframes sheen{to{background-position:-150% 0}}
+.hero::before{content:"M3";position:absolute;right:-2vw;bottom:-5vw;font:700 min(46vw,520px)/.8 "UnifrakturCook",Georgia,serif;color:transparent;-webkit-text-stroke:1px rgba(236,230,218,.13);pointer-events:none}
+.outl{overflow:hidden;white-space:nowrap;margin:0 0 56px}
+.outl div{display:inline-block;font:700 clamp(70px,13vw,160px)/1 "UnifrakturCook",Georgia,serif;color:transparent;-webkit-text-stroke:1px var(--bone);animation:roll 45s linear infinite}
+.grid{gap:30px 22px}
+@media(min-width:900px){.card:nth-child(3n+2){margin-top:56px}}
+.card{border-color:transparent;background:linear-gradient(180deg,var(--oil),#08060c)}
+.stage::before{content:"";position:absolute;inset:12px;border:1px solid rgba(236,230,218,.15);z-index:1;pointer-events:none;transition:inset .3s,border-color .3s}
+.card:hover .stage::before{inset:6px;border-color:var(--red)}
+.stage::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 115%,rgba(211,18,43,.6),transparent 60%);opacity:0;transition:opacity .4s}
+.card:hover .stage::after{opacity:1}
+.info h3{font-family:"UnifrakturCook",Georgia,serif;font-weight:700;font-size:27px;line-height:1.05}
+.btn{position:relative;overflow:hidden;z-index:0}
+.btn::before{content:"";position:absolute;inset:0;background:var(--red);transform:translateY(101%);transition:transform .3s;z-index:-1}
+.btn:hover{background:var(--bone);border-color:var(--red);color:#fff}.btn.g:hover{background:transparent}.btn:hover::before{transform:none}
+nav .l a.h{position:relative}nav .l a.h::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s}nav .l a.h:hover::after{transform:scaleX(1)}
+#cur{position:fixed;left:0;top:0;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:var(--red);pointer-events:none;z-index:95;transition:width .25s,height .25s,margin .25s,opacity .25s}
+#cur.grow{width:60px;height:60px;margin:-30px 0 0 -30px;opacity:.55}
+.cc,.cc a,.cc button{cursor:none}
+[hidden]{display:none!important}
+.stage{color:inherit;text-decoration:none}.info h3 a{text-decoration:none}.info h3 a:hover{color:var(--red)}
+.pr{font-weight:700;margin:-4px 0 12px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chips button{padding:8px 16px;background:none;border:1px solid var(--line);color:var(--mute);font:700 14px "Space Grotesk",sans-serif;cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--bone);color:var(--void);border-color:var(--bone)}
+.bar label{font-size:14px;color:var(--mute)}select{background:var(--oil);color:var(--bone);border:1px solid var(--line);padding:9px 12px;font:500 14px "Space Grotesk",sans-serif;margin-left:8px}
+.more{margin-top:48px;text-align:center}
+.crumb{margin-bottom:22px;font-size:14px}.crumb a{color:var(--mute);text-decoration:none}.crumb a:hover{color:var(--bone)}
+.pd{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px;align-items:start}.pd .stage{border:1px solid var(--line)}
+.pi h2{font-size:clamp(38px,6vw,64px)}.pi .pr{font-size:26px;margin:0 0 16px}.pi p{color:#cfc7dd;max-width:46ch;margin:0}
+.lab{font-size:13px;color:var(--mute);text-transform:uppercase;letter-spacing:.12em;margin:24px 0 8px}.pi .sz button{width:56px;height:46px}
+.buy{display:flex;gap:12px;flex-wrap:wrap}
+.spec{list-style:none;padding:0;margin:30px 0 0;border-top:1px solid var(--line)}.spec li{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}.spec b{width:90px;flex:none;color:var(--mute);font-weight:500}
+table{border-collapse:collapse;width:100%;max-width:420px;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left}th{color:var(--mute);font-weight:500}
+.rel{font-size:42px;margin:90px 0 24px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.thumbs button{padding:0;border:1px solid var(--line);background:radial-gradient(circle at 50% 38%,var(--c),var(--void) 78%);aspect-ratio:1;cursor:pointer;display:grid;place-items:center;overflow:hidden}
+.thumbs button[aria-pressed=true]{border-color:var(--red)}.thumbs svg{width:84%;height:auto;pointer-events:none}.thumbs img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.crow{display:grid;grid-template-columns:84px 1fr auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.th{position:relative;overflow:hidden;width:84px;height:84px;background:radial-gradient(circle,var(--c),var(--void) 80%);display:grid;place-items:center;border:1px solid var(--line)}.th svg{width:80%}.th img{width:100%;height:100%;object-fit:cover}
+.crow h4{margin:0;font:700 24px "UnifrakturCook",Georgia,serif}.crow small{color:var(--mute)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);margin-top:8px}.qty button{width:34px;height:34px;background:none;border:0;color:var(--bone);font:700 16px sans-serif;cursor:pointer}.qty span{min-width:28px;text-align:center}
+.rm{background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;margin-left:12px;font:inherit;font-size:13px}
+.two2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:start;margin-top:30px}
+.sum{border:1px solid var(--line);background:var(--oil);padding:24px}.sum div{display:flex;justify-content:space-between;gap:12px;padding:6px 0;color:var(--mute)}.sum .t{color:var(--bone);font-weight:700;font-size:20px;border-top:1px solid var(--line);margin-top:8px;padding-top:12px}.sum .btn{width:100%;margin-top:16px;text-align:center}
+form label{display:block;font-size:13px;color:var(--mute);margin:14px 0 6px}
+form input:not([type=radio]),form textarea{width:100%;background:var(--oil);border:1px solid var(--line);color:var(--bone);padding:12px;font:400 16px "Space Grotesk",sans-serif}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pay{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);padding:14px;margin-top:10px;cursor:pointer;color:var(--bone);font-size:15px}.pay input{margin-top:5px;accent-color:var(--red)}.pay small{color:var(--mute);font-size:13px}
+.note{color:var(--mute);font-size:14px;margin:10px 0 0}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,40px);background:var(--bone);color:var(--void);padding:12px 20px;font-weight:700;opacity:0;pointer-events:none;transition:.3s;z-index:96}#toast.on{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card{clip-path:none}html{scroll-behavior:auto}#intro{display:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="lp" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8Q4 0 8 8" stroke="#fff" stroke-opacity=".13" fill="none"/></pattern></defs></svg>
+
+<div id="intro" aria-hidden="true"><b class="gf">M3</b><svg viewBox="0 0 1200 80" preserveAspectRatio="none" fill="#050407"><path d="M0 0H1200V10H1150V40q-12 36-24 0V10H990V64q-14 18-28 0V10H800V34q-16 28-32 0V10H610V70q-13 12-26 0V10H420V44q-15 30-30 0V10H230V58q-14 20-28 0V10H60V30q-12 26-24 0V10H0z"/></svg></div><div id="bar"></div>
+<nav><div class="wrap"><a class="logo gf" href="#top">M3</a>
+<div class="l"><a class="h" href="#catalog">Shop</a><a class="h" href="#order">How to order</a><a class="h" href="#wholesale">Wholesale</a><a class="btn g" style="padding:8px 16px;font-size:14px" id="navWa" href="#order">WhatsApp</a><a class="btn" style="padding:8px 16px;font-size:14px" id="cartBtn" href="#cart">Cart (<span id="cc">0</span>)</a></div></div></nav>
+
+<header class="hero" id="top">
+<canvas id="goo"></canvas>
+<div class="wrap">
+<h1 class="gf" data-t="Build different.">Build different.</h1>
+<p>Unisex premium streetwear. Oversized fits, heavy loop-knit and graphic drops. Trust the process. Worn everywhere.</p>
+<div class="cta"><a class="btn" href="#shop">See the drops</a><a class="btn g" id="heroWa" href="#order">Order on WhatsApp</a></div>
+</div></header>
+
+<div class="tape" aria-hidden="true"><div id="tape"></div></div>
+<div class="teeth" aria-hidden="true"><svg viewBox="0 0 1200 34" preserveAspectRatio="none"><defs><pattern id="t" width="40" height="34" patternUnits="userSpaceOnUse"><path d="M0 0h40L20 34z" fill="#ece6da"/></pattern></defs><rect width="1200" height="34" fill="url(#t)"/><path class="tongue" d="M520 0h160q-80 56-160 0z" fill="#d3122b"/></svg></div>
+
+<main id="vHome">
+<section id="shop" style="padding-top:40px"><div class="outl" aria-hidden="true"><div id="outl"></div></div><div class="wrap">
+<h2 class="gf">The drops</h2>
+<p class="sub">Retail pieces for individuals. Pick a size, add it to your cart and check out right here.</p>
+<div class="grid" id="grid"></div>
+<div class="more"><a class="btn g" href="#catalog">Browse the full catalog</a></div>
+</div></section>
+
+<section id="order" style="padding-top:0"><div class="wrap">
+<h2 class="gf">How to order</h2>
+<p class="sub">Order on the site, no account needed. Prefer to chat? WhatsApp and calls still work.</p>
+<div class="steps">
+<div><b class="gf">First</b><p>Pick a piece and your size, then add it to the cart.</p></div>
+<div><b class="gf">Then</b><p>Check out with your address. Pay by UPI or cash on delivery.</p></div>
+<div><b class="gf">Last</b><p>M3 confirms your order and ships it to your door.</p></div>
+</div></div></section>
+
+<section id="wholesale" style="padding-top:0"><div class="wrap">
+<h2 class="gf">Retail or wholesale</h2>
+<p class="sub">M3 sells to individual buyers and supplies stores across India.</p>
+<div class="two">
+<div class="panel"><h3 class="gf" style="font-size:36px;margin:0 0 8px">Retail</h3><p>One piece or a few. Unique fits for you, straight from the page.</p><a class="btn" data-wa="Hi M3! I want to buy retail." href="#order">Order a piece</a></div>
+<div class="panel"><h3 class="gf" style="font-size:36px;margin:0 0 8px">Wholesale</h3><p>Stocking a store? Ask for bulk rates and size bundles.</p><a class="btn g" data-wa="Hi M3! I want wholesale rates for my store." href="#order">Ask for rates</a></div>
+</div></div></section>
+</main>
+<main id="vCat" hidden><section style="padding-top:50px"><div class="wrap">
+<h2 class="gf">Catalog</h2><p class="sub">Every piece in stock. Filter by type, tap a piece for sizes and details.</p>
+<div class="bar"><div class="chips" id="chips" role="group" aria-label="Filter"></div><label>Sort<select id="sort"><option value="f">Featured</option><option value="a">Price: low to high</option><option value="d">Price: high to low</option></select></label></div>
+<div class="grid" id="cgrid"></div><p id="none" class="sub" hidden>Nothing in this category yet.</p>
+</div></section></main>
+<main id="vCart" hidden><section style="padding-top:50px"><div class="wrap"><h2 class="gf">Your cart</h2><div id="cv"></div></div></section></main>
+<main id="vCheck" hidden><section style="padding-top:50px"><div class="wrap"><h2 class="gf">Checkout</h2><div id="kv"></div></div></section></main>
+<main id="vDone" hidden><section style="padding-top:50px"><div class="wrap" id="dv"></div></section></main>
+<div id="toast" role="status"></div>
+<main id="vProd" hidden><section style="padding-top:36px"><div class="wrap" id="pv"></div></section></main>
+
+<footer><div class="wrap"><span class="gf" style="font-size:28px;color:var(--bone)">M3 Clothing</span>
+<span>Call or WhatsApp: <a href="tel:+918111856737">+91 81118 56737</a></span>
+<a href="https://instagram.com/m3clothing.in" target="_blank" rel="noopener">@m3clothing.in</a></div></footer>
+
+<script>
+/* ===== EDIT: real contact, ticker and products (add photos in img) ===== */
+const WA="918111856737", IG="m3clothing.in";
+const TICKER=["Unisex","Retail / wholesale","Trust the process","Build different","Worn everywhere"];
+const P=[
+{n:"Fang Oversized Tee",t:"tee",c:"#3b1163",p:"fang",tag:"Graphic tee",pr:1299,img:"",ft:1},
+{n:"Heavy Loop-Knit Hoodie",t:"hood",c:"#4a1020",p:"m3",tag:"Loop-knit",pr:2499,img:"",ft:1},
+{n:"Loop-Knit Crew",t:"knit",c:"#1d2a4a",p:"eye",tag:"Loop-knit",pr:1999,img:"",ft:1},
+{n:"Streetwear Coord Set",t:"coord",c:"#2a1245",p:"m3",tag:"Coord set",pr:3299,img:""},
+{n:"Oversized M3 Tee",t:"tee",c:"#4a1020",p:"m3",tag:"Oversized",pr:1199,img:""},
+{n:"Symbiote Hoodie",t:"hood",c:"#3b1163",p:"eye",tag:"Hoodie",pr:2399,img:""},
+{n:"Process Tee",t:"tee",c:"#1d2a4a",p:"eye",tag:"Graphic tee",pr:1299,img:""},
+{n:"Fang Hoodie",t:"hood",c:"#2a1245",p:"fang",tag:"Hoodie",pr:2599,img:""},
+{n:"Graveyard Shift Tee",t:"tee",c:"#2a1245",p:"fang",tag:"Graphic tee",pr:1399,img:""},
+{n:"Midnight M3 Hoodie",t:"hood",c:"#1d2a4a",p:"m3",tag:"Heavyweight",pr:2699,img:""},
+{n:"Eye Loop-Knit Sweater",t:"knit",c:"#4a1020",p:"eye",tag:"Loop-knit",pr:2199,img:""},
+{n:"Fang Loop-Knit Crew",t:"knit",c:"#3b1163",p:"fang",tag:"Loop-knit",pr:2099,img:""},
+{n:"Blood Red Coord Set",t:"coord",c:"#4a1020",p:"fang",tag:"Coord set",pr:3499,img:""},
+{n:"Eclipse Coord Set",t:"coord",c:"#1d2a4a",p:"eye",tag:"Coord set",pr:3399,img:""},
+{n:"Trust The Process Tee",t:"tee",c:"#4a1020",p:"eye",tag:"Oversized",pr:1249,img:""},
+{n:"Static Noise Hoodie",t:"hood",c:"#3b1163",p:"fang",tag:"Hoodie",pr:2499,img:""},
+{n:"Gothic M3 Tee",t:"tee",c:"#1d2a4a",p:"m3",tag:"Graphic tee",pr:1199,img:""},
+{n:"Ink Loop-Knit Hoodie",t:"hood",c:"#2a1245",p:"eye",tag:"Loop-knit",pr:2899,img:""}];
+/* type: [label, description, fabric, care] (prices in INR, edit freely) */
+const TY={tee:["Tees","Oversized drop-shoulder fit in heavy cotton that holds its shape wash after wash.","240 GSM combed cotton","Cold wash inside out. Hang dry."],
+hood:["Hoodies","Boxy, heavyweight and built to layer. Brushed inside, ribbed cuffs, no shrinking attitude.","400 GSM fleece","Cold wash inside out. Do not tumble dry."],
+knit:["Knits","Dense loop-knit with a textured face that catches the light. Warm without the bulk.","Loop-knit cotton blend","Gentle wash. Dry flat."],
+coord:["Coord sets","Matching top and bottoms, cut oversized and sold together.","240 GSM cotton jersey","Cold wash inside out. Hang dry."]};
+const SZ={S:["42","27"],M:["44","28"],L:["46","29"]};/* chest, length in inches */
+/* ======================================================================= */
+const $=s=>document.querySelector(s);
+const wa=m=>`https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+$("#tape").innerHTML=Array(4).fill(TICKER.map(t=>`<span>${t}</span><span class="gf">✠</span>`).join("")).join("");
+["#navWa","#heroWa"].forEach(s=>{const a=$(s);a.href=wa("Hi M3! I saw your page and want to order.");a.target="_blank";a.rel="noopener"});
+document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+
+/* garment drawings */
+const B={tee:"M62 22L8 58l24 40 22-12v136h92V86l22 12 24-40-54-36Q100 48 62 22z",
+hood:"M64 40L18 68 8 206l32 6 12-84v100h96V128l12 84 32-6-10-138-46-28Q100 62 64 40z",
+knit:"M64 34L18 62 8 204l32 6 12-82v96h96v-96l12 82 32-6-10-142-46-28Q100 52 64 34z"};
+const PR={m3:'<text x="100" y="124" text-anchor="middle" font-family="UnifrakturCook,serif" font-size="50" fill="#ece6da">M3</text>',
+fang:'<path d="M66 100h68l-9 26-9-16-16 26-16-26-9 16z" fill="#ece6da"/><path d="M92 100h16v10q-8 12-16 0z" fill="#d3122b"/>',
+eye:'<path d="M64 98l34 14-9 16z M136 98l-34 14 9 16z" fill="#ece6da"/>'};
+function art(p,v){
+ const vb=v==="d"?(p.t==="coord"?"62 40 76 56":"46 78 108 82"):"0 0 200 240";
+ const k=p.t==="coord"?"tee":p.t,d=B[k],f="#0b0910",s="#1f1830";
+ let g=`<path d="${d}" fill="${f}" stroke="${s}" stroke-width="2"/>`;
+ if(k!=="tee")g+=`<path d="${d}" fill="url(#lp)"/>`;
+ if(k==="hood")g+=`<path d="M66 42Q100-8 134 42Q100 72 66 42z" fill="#171221" stroke="${s}" stroke-width="2"/><path d="M72 170h56l8 40H64z" fill="none" stroke="${s}" stroke-width="2"/>`;
+ g+=v==="b"?`<g transform="translate(-30 -34) scale(1.3)">${PR[p.p]}</g><text x="100" y="72" text-anchor="middle" font-family="UnifrakturCook,serif" font-size="13" fill="#d3122b">M3</text>`:PR[p.p];
+ if(p.t==="coord")return `<svg viewBox="${vb}" aria-hidden="true"><g transform="translate(40 -6) scale(.6)">${g}</g><path d="M62 128h76l12 106h-40l-10-72-10 72H50z" fill="${f}" stroke="${s}" stroke-width="2"/><path d="M62 128h76l12 106h-40l-10-72-10 72H50z" fill="url(#lp)"/></svg>`;
+ return `<svg viewBox="${vb}" aria-hidden="true">${g}</svg>`;
+}
+const slug=x=>x.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+P.forEach(x=>x.id="p-"+slug(x.n));
+const money=n=>"₹"+n.toLocaleString("en-IN");
+const sizes=()=>`<div class="sz" role="group" aria-label="Size">${Object.keys(SZ).map((s,j)=>`<button aria-pressed="${j===1}" data-s="${s}">${s}</button>`).join("")}</div>`;
+/* gallery: p.imgs (array of data: URIs) if given, else generated front, back and detail views */
+const views=p=>p.imgs&&p.imgs.length?p.imgs.map(u=>`<img src="${u}" alt="${p.n}">`):["f","b","d"].map(v=>art(p,v));
+const media=p=>p.img?`<img src="${p.img}" alt="${p.n}" loading="lazy">`:art(p);
+const card=p=>`<article class="card" data-id="${p.id}"><a class="stage" href="#${p.id}" style="--c:${p.c}" aria-label="View ${p.n}">${media(p)}<span class="tag">${p.tag}</span></a>
+<div class="info"><h3><a href="#${p.id}">${p.n}</a></h3><div class="pr">${money(p.pr)}</div>${sizes()}<button class="btn go">Add to cart</button></div></article>`;
+/* reveal cards by position (an IntersectionObserver never fires on clip-path hidden cards) */
+function chk(){document.querySelectorAll(".card:not(.in)").forEach(c=>{const r=c.getBoundingClientRect();if(r.width&&r.top<innerHeight*.92&&r.bottom>0)c.classList.add("in")})}
+function reveal(r){r.querySelectorAll(".card").forEach((c,i)=>{c.style.transitionDelay=(i%3)*.12+"s"});requestAnimationFrame(chk);setTimeout(chk,150)}
+addEventListener("scroll",chk,{passive:true});addEventListener("resize",chk);
+$("#grid").innerHTML=P.filter(x=>x.ft).map(card).join("");reveal($("#grid"));
+
+/* catalog */
+let flt="all",srt="f";
+$("#chips").innerHTML=[["all","All"],...Object.entries(TY).map(([k,v])=>[k,v[0]])].map(([k,l])=>`<button data-f="${k}" aria-pressed="${k==="all"}">${l}</button>`).join("");
+function cat(){
+ const l=P.filter(x=>flt==="all"||x.t===flt);if(srt==="a")l.sort((a,b)=>a.pr-b.pr);if(srt==="d")l.sort((a,b)=>b.pr-a.pr);
+ $("#cgrid").innerHTML=l.map(card).join("");$("#none").hidden=l.length>0;reveal($("#cgrid"))}
+$("#chips").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;flt=b.dataset.f;$("#chips").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));cat()});
+$("#sort").addEventListener("change",e=>{srt=e.target.value;cat()});
+
+/* product page */
+function prod(id){
+ const p=P.find(x=>x.id===id);if(!p)return false;const T=TY[p.t];
+ const rel=P.filter(x=>x!==p).sort((a,b)=>(b.t===p.t)-(a.t===p.t)).slice(0,3);
+ $("#pv").innerHTML=`<div class="crumb"><a href="#catalog">← Catalog</a> / ${T[0]}</div>
+<div class="pd" data-id="${p.id}"><div><div class="stage" id="gal" style="--c:${p.c}">${views(p)[0]}<span class="tag">${p.tag}</span></div>
+<div class="thumbs">${views(p).map((x,i)=>`<button style="--c:${p.c}" data-v="${i}" aria-pressed="${i===0}" aria-label="${["Front","Back","Detail"][i]||"View "+(i+1)}">${x}</button>`).join("")}</div></div>
+<div class="pi"><h2 class="gf">${p.n}</h2><div class="pr">${money(p.pr)}</div><p>${T[1]}</p>
+<div class="lab">Size</div>${sizes()}
+<div class="buy" style="margin-top:22px"><button class="btn go">Add to cart</button><button class="btn g go" data-now="1">Buy now</button><a class="rm" target="_blank" rel="noopener" href="${wa(`Hi M3! Is the ${p.n} available? I have a question.`)}">Ask a question on WhatsApp</a></div>
+<ul class="spec"><li><b>Fabric</b>${T[2]}</li><li><b>Fit</b>Unisex, oversized</li><li><b>Care</b>${T[3]}</li><li><b>Payment</b>Link sent on WhatsApp after you confirm</li></ul>
+<div class="lab">Size guide (inches)</div><table><tr><th>Size</th><th>Chest</th><th>Length</th></tr>${Object.entries(SZ).map(([k,v])=>`<tr><td>${k}</td><td>${v[0]}</td><td>${v[1]}</td></tr>`).join("")}</table></div></div>
+<h3 class="gf rel">You may also like</h3><div class="grid">${rel.map(card).join("")}</div>`;
+ reveal($("#pv"));return p}
+
+/* clicks: size pick + order */
+document.addEventListener("click",e=>{
+ const tb=e.target.closest(".thumbs button");
+ if(tb){const p=P.find(x=>x.id===tb.closest("[data-id]").dataset.id);tb.parentNode.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b===tb));$("#gal").innerHTML=views(p)[tb.dataset.v]+`<span class="tag">${p.tag}</span>`;return}
+ const sb=e.target.closest(".sz button");
+ if(sb){sb.parentNode.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b===sb));return}
+ const go=e.target.closest(".go");
+ if(go){const c=go.closest("[data-id]"),p=P.find(x=>x.id===c.dataset.id),s=c.querySelector('.sz [aria-pressed="true"]').dataset.s;
+  addCart(p.id,s,go.dataset.now)}
+});
+/* card tilt */
+document.addEventListener("pointermove",e=>{if(e.pointerType!=="mouse")return;const c=e.target.closest&&e.target.closest(".card");if(!c)return;const r=c.getBoundingClientRect();
+ c.style.setProperty("--ry",((e.clientX-r.left)/r.width-.5)*10+"deg");c.style.setProperty("--rx",(.5-(e.clientY-r.top)/r.height)*10+"deg")});
+document.addEventListener("pointerout",e=>{const c=e.target.closest&&e.target.closest(".card");if(c&&!c.contains(e.relatedTarget)){c.style.setProperty("--rx","0deg");c.style.setProperty("--ry","0deg")}});
+
+/* cart + checkout. EDIT: UPI id, free-shipping rule, optional ENDPOINT (webhook that receives each order as JSON, works when self-hosted) */
+const UPI="yourname@upi",FREE=2999,FEE=99,ENDPOINT="";
+let CART=[],LAST;try{CART=JSON.parse(localStorage.getItem("m3cart")||"[]")}catch(e){}
+const byId=id=>P.find(x=>x.id===id),esc=x=>String(x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function persist(){try{localStorage.setItem("m3cart",JSON.stringify(CART))}catch(e){}$("#cc").textContent=CART.reduce((a,l)=>a+l.q,0)}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("on"),1800)}
+function addCart(id,s,now){const l=CART.find(x=>x.id===id&&x.s===s);l?l.q++:CART.push({id,s,q:1});persist();if(now)location.hash="checkout";else toast("Added to cart")}
+const tot=()=>{const sub=CART.reduce((a,l)=>a+byId(l.id).pr*l.q,0),ship=!sub||sub>=FREE?0:FEE;return{sub,ship,total:sub+ship}};
+const sum=()=>{const t=tot();return `<div><span>Subtotal</span><span>${money(t.sub)}</span></div><div><span>Shipping</span><span>${t.ship?money(t.ship):"Free"}</span></div><div class="t"><span>Total</span><span>${money(t.total)}</span></div>`};
+function cartV(){
+ if(!CART.length){$("#cv").innerHTML=`<p class="sub">Your cart is empty.</p><a class="btn" href="#catalog">Browse the catalog</a>`;return}
+ $("#cv").innerHTML=`<div class="two2"><div>${CART.map((l,i)=>{const p=byId(l.id);return `<div class="crow"><div class="th" style="--c:${p.c}">${media(p)}</div><div><h4>${p.n}</h4><small>Size ${l.s}</small><br><span class="qty"><button data-q="${i}" data-d="-1" aria-label="Less">−</button><span>${l.q}</span><button data-q="${i}" data-d="1" aria-label="More">+</button></span><button class="rm" data-rm="${i}">Remove</button></div><b>${money(p.pr*l.q)}</b></div>`}).join("")}</div>
+<div class="sum">${sum()}<p class="note">Free shipping over ${money(FREE)}.</p><a class="btn" href="#checkout">Checkout</a></div></div>`}
+function checkV(){
+ if(!CART.length){location.hash="cart";return}
+ $("#kv").innerHTML=`<form id="ck" class="two2"><div>
+<label>Full name<input name="name" required autocomplete="name"></label>
+<div class="f2"><label>Phone<input name="phone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 digits" autocomplete="tel"></label><label>Email<input name="email" type="email" required autocomplete="email"></label></div>
+<label>Address<textarea name="addr" rows="3" required autocomplete="street-address"></textarea></label>
+<div class="f2"><label>City<input name="city" required></label><label>State<input name="state" required></label></div>
+<label>PIN code<input name="pin" required inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="postal-code"></label>
+<div class="lab">Payment</div>
+<label class="pay"><input type="radio" name="pay" value="COD" checked><span><b>Cash on delivery</b><br><small>Pay when it arrives.</small></span></label>
+<label class="pay"><input type="radio" name="pay" value="UPI"><span><b>UPI</b><br><small>Pay ${money(tot().total)} to ${UPI} after placing the order. M3 confirms the payment before shipping.</small></span></label>
+</div><div class="sum"><b>Order summary</b>${CART.map(l=>`<div><span>${byId(l.id).n} · ${l.s} × ${l.q}</span><span>${money(byId(l.id).pr*l.q)}</span></div>`).join("")}${sum()}<button class="btn" id="po">Place order</button><p class="note">M3 will contact you on the phone and email above about this order.</p></div></form>`}
+async function sendOrder(o){let ok=false;
+ try{if(window.claude){const [db,u]=await Promise.race([Promise.all([claude.use("db"),claude.use("user")]),new Promise(r=>setTimeout(r,4000))])||[];
+  if(db&&u){const ref=db.collection("orders").doc(await u.id()),sn=await ref.get(),d={orders:{[o.id]:o}};sn.exists?await ref.update(d):await ref.set(d);ok=true}}}catch(e){}
+ if(ENDPOINT){try{await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(o)});ok=true}catch(e){}}
+ return ok}
+document.addEventListener("submit",async e=>{if(e.target.id!=="ck")return;e.preventDefault();
+ const f=new FormData(e.target),b=$("#po");b.disabled=true;b.textContent="Placing order…";
+ const o={id:"M3-"+Date.now().toString(36).toUpperCase(),at:new Date().toISOString(),items:CART.map(l=>({n:byId(l.id).n,s:l.s,q:l.q,pr:byId(l.id).pr})),...tot(),pay:f.get("pay"),status:f.get("pay")==="UPI"?"awaiting UPI payment":"new",
+  cust:{name:f.get("name"),phone:f.get("phone"),email:f.get("email"),addr:f.get("addr"),city:f.get("city"),state:f.get("state"),pin:f.get("pin")}};
+ o.sent=await sendOrder(o);try{localStorage.setItem("m3last",JSON.stringify(o))}catch(x){}
+ LAST=o;CART=[];persist();location.hash="thanks"});
+function doneV(){let o=LAST;if(!o)try{o=JSON.parse(localStorage.getItem("m3last"))}catch(e){}
+ if(!o){location.hash="catalog";return}
+ const c=o.cust,lines=o.items.map(i=>`${i.n} (${i.s}) x${i.q}`).join(", ");
+ const wm=`Hi M3! Order ${o.id}: ${lines}. Total ${money(o.total)}, ${o.pay}. Name: ${c.name}, phone ${c.phone}, ship to ${c.addr}, ${c.city}, ${c.state} ${c.pin}.`;
+ $("#dv").innerHTML=`<h2 class="gf">Order placed</h2><p class="sub">Thanks ${esc(c.name.split(" ")[0])}. Your order number is <b>${o.id}</b>.</p>
+<div class="two2"><div class="sum"><b>Your order</b>${o.items.map(i=>`<div><span>${esc(i.n)} · ${i.s} × ${i.q}</span><span>${money(i.pr*i.q)}</span></div>`).join("")}<div><span>Shipping</span><span>${o.ship?money(o.ship):"Free"}</span></div><div class="t"><span>Total</span><span>${money(o.total)}</span></div><p class="note">Ship to: ${esc(c.name)}, ${esc(c.addr)}, ${esc(c.city)}, ${esc(c.state)} ${esc(c.pin)}</p></div>
+<div>${o.pay==="UPI"?`<p><b>Next: pay ${money(o.total)} by UPI</b><br>UPI ID: <b>${UPI}</b>, note: ${o.id}</p><a class="btn" href="upi://pay?pa=${encodeURIComponent(UPI)}&pn=M3%20Clothing&am=${o.total}&cu=INR&tn=${o.id}">Open UPI app</a>`:`<p><b>Cash on delivery.</b> Keep ${money(o.total)} ready when it arrives.</p>`}
+${o.sent?"":`<p class="note">We couldn’t send this order to M3 automatically. Please tap below so M3 gets it.</p><a class="btn" target="_blank" rel="noopener" href="${wa(wm)}">Send order to M3 on WhatsApp</a>`}
+<p style="margin-top:22px"><a class="btn g" href="#catalog">Keep shopping</a></p></div></div>`}
+document.addEventListener("click",e=>{const q=e.target.closest("[data-q]"),r=e.target.closest("[data-rm]");
+ if(q){const l=CART[q.dataset.q];l.q+=+q.dataset.d;if(l.q<1)CART.splice(q.dataset.q,1);persist();cartV()}
+ if(r){CART.splice(r.dataset.rm,1);persist();cartV()}});
+persist();
+
+/* router: #catalog, #cart, #checkout, #thanks, #p-product-name, anything else is the home page */
+const HOME=[".hero",".tape",".teeth","#vHome"];let prev;
+function route(){
+ const id=location.hash.slice(1);let v="home",pp;
+ if(id==="catalog")v="cat";else if(id==="cart")v="cart";else if(id==="checkout")v="check";else if(id==="thanks")v="done";else if(id.startsWith("p-")){pp=prod(id);v=pp?"prod":"cat"}
+ HOME.forEach(q=>$(q).hidden=v!=="home");$("#vCat").hidden=v!=="cat";$("#vProd").hidden=v!=="prod";$("#vCart").hidden=v!=="cart";$("#vCheck").hidden=v!=="check";$("#vDone").hidden=v!=="done";
+ document.title=pp?`${pp.n} — M3 Clothing`:v==="cat"?"Catalog — M3 Clothing":"M3 Clothing — build different";
+ if(v==="cat")cat();if(v==="cart")cartV();if(v==="check")checkV();if(v==="done")doneV();
+ if(v==="home"){if(prev&&prev!=="home"){size();if(still)frame()}const el=id&&document.getElementById(id);el?el.scrollIntoView():scrollTo(0,0)}else scrollTo(0,0);
+ prev=v}
+addEventListener("hashchange",route);
+/* symbiote: metaball field (bottom pool and top drips), shaded per pixel as wet black latex */
+const hero=$(".hero"),cv=$("#goo"),cx=cv.getContext("2d");
+const still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+let w,h,K,F,img,t=0;
+const T=.5;
+const Ll=Math.hypot(-.35,-.5,.8),Lx=-.35/Ll,Ly=-.5/Ll,Lz=.8/Ll,Mx=.6,My=.5,Mz=.62;
+const p=v=>v/K;
+function size(){const cw=hero.clientWidth,chh=hero.clientHeight;if(!cw)return;K=Math.max(2,Math.round(Math.sqrt(cw*chh/110000)));
+ w=cv.width=Math.ceil(cw/K);h=cv.height=Math.ceil(chh/K);F=new Float32Array(w*h);img=cx.createImageData(w,h)}
+size();addEventListener("resize",size);
+function add(x,y,r){const R=r*2.4,R2=R*R,x0=Math.max(0,(x-R)|0),x1=Math.min(w-1,Math.ceil(x+R)),y0=Math.max(0,(y-R)|0),y1=Math.min(h-1,Math.ceil(y+R));
+ for(let yy=y0;yy<=y1;yy++){const dy=yy-y,dy2=dy*dy,row=yy*w;for(let xx=x0;xx<=x1;xx++){const dx=xx-x,q=1-(dx*dx+dy2)/R2;if(q>0)F[row+xx]+=q*q*q}}}
+function frame(){
+ if(hero.hidden){if(!still)requestAnimationFrame(frame);return}
+ t+=.016;F.fill(0);
+ for(let i=0;i<=14;i++)add(i/14*w,h-p(24+22*Math.sin(t*1.2+i*1.7)),p(46+10*Math.sin(t+i)));
+ for(let i=0;i<=8;i++)add(i/8*w,-p(6),p(34));
+ for(let i=0;i<7;i++){const x=(i+.5)/7*w,l=p(30+110*Math.abs(Math.sin(t*.5+i*2.3)));for(let j=0;j<10;j++){const f=j/9;add(x,p(10)+l*f,p(16-8*f))}add(x,p(10)+l+p(5),p(10))}
+ const px=img.data;
+ for(let y=0,i=0;y<h;y++)for(let x=0;x<w;x++,i++){
+  const f=F[i],o=i*4;
+  if(f<T-.03){px[o+3]=0;continue}
+  const xm=x>1?i-2:i,xp=x<w-2?i+2:i,ym=y>1?i-2*w:i,yp=y<h-2?i+2*w:i,inn=Math.min(1,Math.max(0,(f-T)*1.6));
+  let nx=-(F[xp]-F[xm])*3+inn*.14*Math.cos(x*.11+2*Math.sin(y*.06+t*.5)+t*1.1),ny=-(F[yp]-F[ym])*3+inn*.14*Math.cos(y*.1+2*Math.sin(x*.05-t*.4)-t*.9);
+  const nz=1/Math.sqrt(nx*nx+ny*ny+1);nx*=nz;ny*=nz;
+  const rx=2*nz*nx,ry=2*nz*ny,rz=2*nz*nz-1,d1=rx*Lx+ry*Ly+rz*Lz,d2=rx*Mx+ry*My+rz*Mz;
+  const q1=d1>0?d1*d1:0,bs=q1*q1*q1,sb=Math.max(0,1-Math.abs(d1-.95)/.035)*(1-.72*inn),rm=Math.max(0,1-Math.abs(d2-.96)/.04),a=1-nz,fr=a*a*a*.5;
+  px[o]=Math.min(255,4+bs*14+sb*sb*225+rm*26+fr*20);px[o+1]=Math.min(255,4+bs*16+sb*sb*232+rm*44+fr*34);px[o+2]=Math.min(255,8+bs*30+sb*sb*255+rm*90+fr*70);
+  px[o+3]=Math.min(255,(f-T+.03)/.05*255);
+ }
+ cx.putImageData(img,0,0);
+ if(!still)requestAnimationFrame(frame)
+}
+requestAnimationFrame(frame);
+$("#outl").innerHTML=Array(4).fill("Trust the process ✠ Build different ✠ Worn everywhere ✠ ").join("");
+addEventListener("scroll",()=>{$("#bar").style.width=scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)*100+"%"},{passive:true});
+if(matchMedia("(pointer:fine)").matches&&!still){document.documentElement.classList.add("cc");const d=document.createElement("div");d.id="cur";document.body.append(d);let ax=0,ay=0,bx=0,by=0;
+ addEventListener("pointermove",e=>{bx=e.clientX;by=e.clientY;d.classList.toggle("grow",!!e.target.closest("a,button"))});
+ (function m(){ax+=(bx-ax)*.22;ay+=(by-ay)*.22;d.style.transform=`translate(${ax}px,${ay}px)`;requestAnimationFrame(m)})()}
+setTimeout(()=>{const i=$("#intro");i&&i.remove()},2800);
+route();
+</script>
+</body>
+</html>
